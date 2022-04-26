@@ -22,5 +22,12 @@ services:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
   jellyfin:
-    image: ""
-    
+    image:  jellyfin/jellyfin
+    container_name: 
+    ports:
+    volumes:
+      - /path/to/config:/config
+      - /path/to/cache:/cache
+      - /path/to/media:/media
+      - /path/to/media2:/media2:ro
+    restart: unless-stopped
