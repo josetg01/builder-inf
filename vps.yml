@@ -1,12 +1,12 @@
 version: "3.0"
 services:
   portainer:
-    image: "portainer/portainer-ce:2.11.1"
+    image: portainer/portainer-ce:2.11.1
     container_name: Portainer
     ports:
       - "9443:9443"
   pihole:
-    image: "pihole/pihole"
+    image: pihole/pihole
     container_name: PiHole
     ports:
       - "8530:80/tcp"
@@ -16,7 +16,11 @@ services:
     environment:
       TZ: 'Europe/Madrid'
     volumes:
-      - 
+      - '/etc-pihole:/etc/pihole'
+      - '/etc-dnsmasq.d:/etc/dnsmasq.d'
     cap_add:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
+  jellyfin:
+    image: ""
+    
