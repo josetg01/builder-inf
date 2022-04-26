@@ -1,3 +1,22 @@
 version: "3.0"
 services:
-  
+  portainer:
+    image: "portainer/portainer-ce:2.11.1"
+    container_name: Portainer
+    ports:
+      - "9443:9443"
+  pihole:
+    image: "pihole/pihole"
+    container_name: PiHole
+    ports:
+      - "8530:80/tcp"
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" #DHCP
+    environment:
+      TZ: 'Europe/Madrid'
+    volumes:
+      - 
+    cap_add:
+      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
+    restart: unless-stopped
