@@ -18,6 +18,7 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
 adduser -s /bin/zsh -u 5000 josemaria
 sudo echo -ne "josemaria\njosemaria\n" | sudo passwd josemaria
 sudo echo -ne "josemaria\njosemaria\n" | sudo smbpasswd -a josemaria
+echo "josemaria ALL=(ALL) ALL" >> /etc/sudoers
 adduser -s /bin/sbin/nologin -u 5001 pablo -D
 sudo echo -ne "pablo/npablo/n" | sudo smbpasswd -a pablo
 adduser -s /bin/sbin/nologin -u 5002 domingo -D
