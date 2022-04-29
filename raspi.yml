@@ -28,6 +28,5 @@ services:
     volumes:
       - /docker/config/jellyfin:/config
       - /docker/cache/jellyfin:/cache
-      - /path/to/media:/media
-      - /path/to/media2:/media2:ro
+      - /srv/2tb/Multimedia:/media
     restart: unless-stopped
