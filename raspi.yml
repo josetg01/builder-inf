@@ -19,6 +19,7 @@ services:
     volumes:
       - '/docker/etc/pihole:/etc/pihole'
       - '/docker/etc/dnsmasq.d:/etc/dnsmasq.d'
+      - '/etc/resolv.conf:/etc/resolv.conf'
     cap_add:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
