@@ -25,6 +25,6 @@ adduser -s /bin/sbin/nologin -u 5001 pablo -D
 sudo echo -ne "pablo/npablo/n" | sudo smbpasswd -a pablo
 adduser -s /bin/sbin/nologin -u 5002 domingo -D
 sudo echo -ne "domingo/ndomingo/n" | sudo smbpasswd -a domingo
-adduser -s /bin/sbin/nologin -u 5001 mercedes -D
+adduser -s /bin/sbin/nologin -u 5003 mercedes -D
 sudo echo -ne "mercedes/nmercedes/n" | sudo smbpasswd -a mercedes
 echo "familia:x:4000:josemaria,pablo,domingo,mercedes" >> /etc/group
