@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apk add sudo docker docker-compose transmission-daemon samba zsh
+apk add sudo docker docker-compose transmission-daemon samba zsh curl git
 
 # Docker configuration
 mkdir -p /docker/{config,data,cache,etc}
