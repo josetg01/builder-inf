@@ -16,8 +16,8 @@ services:
     environment:
       TZ: 'Europe/Madrid'
     volumes:
-      - '/etc-pihole:/etc/pihole'
-      - '/etc-dnsmasq.d:/etc/dnsmasq.d'
+      - '/docker/etc/pihole:/etc/pihole'
+      - '/docker/etc/dnsmasq.d:/etc/dnsmasq.d'
     cap_add:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
@@ -26,8 +26,8 @@ services:
     container_name: 
     ports:
     volumes:
-      - /path/to/config:/config
-      - /path/to/cache:/cache
+      - /docker/config/jellyfin:/config
+      - /docker/cache/jellyfin:/cache
       - /path/to/media:/media
       - /path/to/media2:/media2:ro
     restart: unless-stopped
