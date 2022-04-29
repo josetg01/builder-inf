@@ -23,10 +23,13 @@ services:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
   jellyfin:
-    image:  jellyfin/jellyfin
+    image: jellyfin/jellyfin
     container_name: jellyfin
+    user: uid:gid
+    network_mode: "host"
     volumes:
       - /docker/config/jellyfin:/config
       - /docker/cache/jellyfin:/cache
       - /srv/2tb/Multimedia:/media
     restart: unless-stopped
+    
