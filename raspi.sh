@@ -16,7 +16,12 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
 
 # Users
 adduser -s /bin/zsh -u 5000 josemaria
+sudo echo -ne "josemaria\njosemaria\n" | sudo passwd josemaria
+sudo echo -ne "josemaria\njosemaria\n" | sudo smbpasswd -a josemaria
 adduser -s /bin/sbin/nologin -u 5001 pablo -D
+sudo echo -ne "pablo/npablo/n" | sudo smbpasswd -a pablo
 adduser -s /bin/sbin/nologin -u 5002 domingo -D
+sudo echo -ne "domingo/ndomingo/n" | sudo smbpasswd -a domingo
 adduser -s /bin/sbin/nologin -u 5001 mercedes -D
+sudo echo -ne "mercedes/nmercedes/n" | sudo smbpasswd -a mercedes
 echo "familia:x:4000:josemaria,pablo,domingo,mercedes" >> /etc/group
