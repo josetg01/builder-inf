@@ -1,8 +1,12 @@
 #!/bin/bash
 
 apk add docker docker-compose transmission-daemon samba
-mkdir -p /docker/{config,data,cache,etc}
 
+# Docker configuration
+mkdir -p /docker/{config,data,cache,etc}
+sudo rc-update add docker
+
+# Torrent client
 sudo rc-update add transmission-daemon
 sudo rc-service transmission-daemon start && sudo rc-service transmission-daemon stop
 sudo cat > /var/lib/transmission/config/settings.json <<EOL
