@@ -40,8 +40,8 @@ services:
       - TZ=Europe/Madrid
     volumes:
       - /docker/config/transmission:/config
-      - /srv/2tb/Torrent/Completados:/completados
-      - /srv/2tb/Torrent/Pendientes:/pendientes
+      - /srv/2tb/Torrent/Completados:/downloads/complete
+      - /srv/2tb/Torrent/Pendientes:/downloads/incomplete
     ports:
       - 9091:9091
       - 51413:51413
