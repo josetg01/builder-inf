@@ -13,6 +13,8 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v portainer_data:/data \
     portainer/portainer-ce:2.9.3
+sudo wget https://raw.githubusercontent.com/josetg01/builder-inf/main/raspi.yml -O /docker/docker-compose.yml
+cd /docker && sudo docker-compose up -d
 
 # Users
 adduser -s /bin/zsh -u 5000 josemaria
