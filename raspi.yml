@@ -6,6 +6,7 @@ services:
     container_name: Portainer
     ports:
       - "9443:9443"
+
   pihole:
     image: pihole/pihole
     container_name: PiHole
@@ -23,6 +24,7 @@ services:
     cap_add:
       - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
     restart: unless-stopped
+
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
@@ -32,4 +34,20 @@ services:
       - /docker/cache/jellyfin:/cache
       - /srv/2tb/Multimedia:/media
     restart: unless-stopped
-    
+
+  transmission:
+    image: lscr.io/linuxserver/transmission
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - /docker/config/transmission:/config
+      - /srv/2tb/Torrent/Completados:/completados
+      - /srv/2tb/Torrent/Pendientes:/pendientes
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
