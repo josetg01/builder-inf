@@ -5,6 +5,8 @@ apk add docker docker-compose transmission-daemon samba
 # Docker configuration
 mkdir -p /docker/{config,data,cache,etc}
 sudo rc-update add docker
+sleep 60
+docker volume create portainer_data
 
 # Torrent client
 sudo rc-update add transmission-daemon
