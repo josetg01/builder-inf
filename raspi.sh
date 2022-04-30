@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 apk add sudo docker docker-compose transmission-daemon samba zsh curl git
 
