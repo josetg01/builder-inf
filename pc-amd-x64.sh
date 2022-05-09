@@ -14,9 +14,7 @@ sudo flatpak install flathub org.gimp.GIMP -y
 
 #Instalacion de diversos software
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5 && echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt-get update
-sudo apt install cpu-x ffmpeg obs-studio onlyoffice-desktopeditors kdenlive brave-browser
+sudo apt install -y cpu-x onlyoffice-desktopeditors brave-browser
 sudo flatpak install flathub fr.handbrake.ghb -y
