@@ -1,6 +1,5 @@
 #/bin/bash
 
-cd /tmp/
 sudo apt install apt-transport-https curl
 
 #Instalar Google Chrome desde repositorios oficiales
