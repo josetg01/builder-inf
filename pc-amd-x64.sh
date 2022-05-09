@@ -17,5 +17,5 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5 
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 sudo apt-get update
-sudo apt install cpu-x ffmpeg obs-studio onlyoffice-desktopeditors
+sudo apt install cpu-x ffmpeg obs-studio onlyoffice-desktopeditors kdenlive
 sudo flatpak install flathub fr.handbrake.ghb -y
