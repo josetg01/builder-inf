@@ -20,5 +20,5 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/josetg01/oh-my-bash/mast
 echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
 wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
 sudo apt update && sudo apt install -y linux-xanmod
-sudo apt install -y amd64-microcode
+sudo apt install -y intel-microcode iucode-tool
 echo 'net.core.default_qdisc = fq_pie' | sudo tee /etc/sysctl.d/90-override.conf
