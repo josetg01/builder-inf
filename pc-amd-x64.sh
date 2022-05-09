@@ -13,3 +13,4 @@ sudo apt update && sudo apt install -y google-chrome-stable
 sudo flatpak install flathub org.gimp.GIMP -y
 
 #Instalacion de diversos software
+sudo apt install cpu-x
