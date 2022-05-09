@@ -13,8 +13,9 @@ sudo apt update && sudo apt install -y google-chrome-stable
 sudo flatpak install flathub org.gimp.GIMP -y
 
 #Instalacion de diversos software
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5 && echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
 sudo add-apt-repository ppa:obsproject/obs-studio
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable
 sudo apt-get update
-sudo apt install cpu-x ffmpeg obs-studio
+sudo apt install cpu-x ffmpeg obs-studio onlyoffice-desktopeditors
 sudo flatpak install flathub fr.handbrake.ghb -y
