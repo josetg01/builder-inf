@@ -13,4 +13,8 @@ sudo apt update && sudo apt install -y google-chrome-stable
 sudo flatpak install flathub org.gimp.GIMP -y
 
 #Instalacion de diversos software
-sudo apt install cpu-x
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable
+sudo apt-get update
+sudo apt install cpu-x ffmpeg obs-studio
+sudo flatpak install flathub fr.handbrake.ghb -y
