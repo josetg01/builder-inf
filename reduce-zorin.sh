@@ -9,4 +9,4 @@ sudo apt purge -y \
   remmina \
   pitivi \
   aisleriot
-sudo apt autoremove -y
+sudo apt autoremove -y && sudo apt update && sudo apt upgrade -y
