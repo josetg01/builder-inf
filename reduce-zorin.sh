@@ -8,5 +8,6 @@ sudo apt purge -y \
   gnome-mahjongg \
   remmina \
   pitivi \
-  aisleriot
+  aisleriot \
+  gnome-tour
 sudo apt autoremove -y && sudo apt update && sudo apt upgrade -y
