@@ -1,23 +1,5 @@
 version: "3.0"
 services:
-  pihole:
-    image: pihole/pihole
-    container_name: PiHole
-    ports:
-      - "8530:80/tcp"
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp" #DHCP
-    environment:
-      TZ: 'Europe/Madrid'
-    volumes:
-      - '/docker/etc/pihole:/etc/pihole'
-      - '/docker/etc/dnsmasq.d:/etc/dnsmasq.d'
-      - '/etc/resolv.conf:/etc/resolv.conf'
-    cap_add:
-      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
-    restart: unless-stopped
-
   jellyfin:
     image: lscr.io/linuxserver/jellyfin
     container_name: jellyfin
@@ -56,7 +38,48 @@ services:
       - PGID=1000
       - TZ=Europe/Madrid
     volumes:
-      - /docker/config/homeassistant:/config
+      - /docker/homeassistant/config:/config
     ports:
       - 8123:8123 #optional
     restart: unless-stopped
+  
+  nginx-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    ports:
+      - 80:80
+      - 443:443
+      - 81:81
+    volumes:
+      - /docker/proxy/data:/data
+      - /docker/proxy/letsencrypt:/etc/letsencrypt
+  
+  deemix:
+    image: finniedj/deemix
+    container_name: deemix
+    volumes:
+      - /srv/2tb/Multimedia/Musica:/downloads
+      - /docker/deemix/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+    ports:
+      - 6595:6595
+
+  metube:
+    image: alexta69/metube
+    container_name: metube
+    ports:
+      - "8081:8081"
+    volumes:
+      - /srv/2tb/Multimedia/YT-dl:/downloads
+    restart: unless-stopped
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    volumes:
+      - /docker/vw/data:/data
+    ports:
+      - 80:80
