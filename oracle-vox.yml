@@ -11,4 +11,30 @@ services:
       - /docker/proxy/data:/data
       - /docker/proxy/letsencrypt:/etc/letsencrypt
       
-  files:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/appdata:/config
+      - /path/to/data:/data
+    ports:
+      - 4443:443
+    restart: unless-stopped
+
+  db:
+    image:
+    container_name: database
+    
+  fireflyiii:
+    image: 
+    container_name:
+    volumes:
+      - firefly_iii_upload:/var/www/html/storage/upload
+    ports:
+      - 8000:8000
+    environment:
+    
