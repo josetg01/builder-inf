@@ -8,8 +8,8 @@ services:
       - 443:443
       - 81:81
     volumes:
-      - /docker/proxy/data:/data
-      - /docker/proxy/letsencrypt:/etc/letsencrypt
+      - ./proxy/data:/data
+      - ./docker/proxy/letsencrypt:/etc/letsencrypt
       
   nextcloud:
     image: lscr.io/linuxserver/nextcloud:latest
@@ -19,8 +19,8 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /docker/nextcloud/appdata:/config
-      - /docker/nextcloud/data:/data
+      - ./nextcloud/appdata:/config
+      - ./nextcloud/data:/data
     ports:
       - 4443:443
     restart: unless-stopped
