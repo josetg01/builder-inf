@@ -1,2 +1,15 @@
-version: ""
+version: "3.0"
 services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+  proxy:
+    image: 	jc21/nginx-proxy-manager:latest
+    container_name: nginx_proxy_manager
+    ports:
+      - 80:80
+      - 443:443
+      - 81:81
+    
+  deemix:
+  jellyfin:
