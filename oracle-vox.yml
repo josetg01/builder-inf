@@ -19,8 +19,8 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /path/to/appdata:/config
-      - /path/to/data:/data
+      - /docker/nextcloud/appdata:/config
+      - /docker/nextcloud/data:/data
     ports:
       - 4443:443
     restart: unless-stopped
