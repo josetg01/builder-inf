@@ -1,11 +1,6 @@
 #/bin/bash
 
-sudo apt install apt-transport-https curl
-
-#Instalar Google Chrome desde repositorios oficiales
-sudo echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list
-sudo wget https://dl.google.com/linux/linux_signing_key.pub
-sudo apt-key add linux_signing_key.pub
+sudo apt -y install apt-transport-https curl
 
 #Instalacion de diversos software
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5 && echo 'deb https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
